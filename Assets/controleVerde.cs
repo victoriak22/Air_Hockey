@@ -16,7 +16,7 @@ public class PlayerControl : MonoBehaviour
     }
 
     private float minX = -10.0f;
-    private float maxX = 10.0f;
+    private float maxX = 0.0f;
     private float minY = -4f;
     private float maxY = 4f;
 

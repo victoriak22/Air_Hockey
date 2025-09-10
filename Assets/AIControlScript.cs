@@ -4,15 +4,49 @@ using UnityEngine;
 
 public class AIControlScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Rigidbody2D rb2d;
+    public float fixedX = 8.0f;   // Posição fixa no eixo X
+    private float minY = -4f;
+    private float maxY = 4f;
+
+    public float speed = 4f;      // Velocidade do movimento da IA
+
+    private Transform ballTransform;
+
     void Start()
     {
-        
+        rb2d = GetComponent<Rigidbody2D>();
+
+        // Encontra a bola pela tag "Ball"
+        GameObject ball = GameObject.FindGameObjectWithTag("Ball");
+        if (ball != null)
+        {
+            ballTransform = ball.transform;
+        }
+        else
+        {
+            Debug.LogError("Nenhuma bola com tag 'Ball' encontrada na cena.");
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (ballTransform == null) return;
+
+        // Posição atual do oponente
+        Vector2 currentPos = rb2d.position;
+
+        // Alvo Y é a posição Y da bola
+        float targetY = ballTransform.position.y;
+
+        // Move gradualmente para o alvo, respeitando velocidade e limites
+        float newY = Mathf.MoveTowards(currentPos.y, targetY, speed * Time.fixedDeltaTime);
+
+        // Limita dentro do campo vertical
+        newY = Mathf.Clamp(newY, minY, maxY);
+
+        Vector2 targetPos = new Vector2(fixedX, newY);
+
+        rb2d.MovePosition(targetPos);
     }
 }

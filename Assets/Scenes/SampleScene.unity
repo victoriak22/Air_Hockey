@@ -395,6 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0364fc0d3aec39d4d81edad02470f2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  source: {fileID: 0}
 --- !u!1 &31958862
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,6 +933,7 @@ GameObject:
   m_Component:
   - component: {fileID: 932216144}
   - component: {fileID: 932216143}
+  - component: {fileID: 932216145}
   m_Layer: 0
   m_Name: mallet_red_0
   m_TagString: Untagged
@@ -1008,6 +1010,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &932216145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932216142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef422fae9c353e469b0c868be1965a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &966538358
 GameObject:
   m_ObjectHideFlags: 0

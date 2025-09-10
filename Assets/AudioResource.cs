@@ -1,0 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class AudioResource : MonoBehaviour
+{
+    public AudioSource source;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
+    void OnCollisionEnter2D (Collision2D coll) {
+        source.Play();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}

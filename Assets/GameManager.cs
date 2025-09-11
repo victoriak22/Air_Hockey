@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     // incrementa a pontuação
     public static void Score (string wallID) {
-        if (wallID == "RedGoal")
+        if (wallID == "GreenGoal")
         {
             PlayerScore1++;
         } else

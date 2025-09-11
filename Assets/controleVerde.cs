@@ -15,10 +15,10 @@ public class PlayerControl : MonoBehaviour
         lastPosition = rb2d.position;
     }
 
-    private float minX = -10.0f;
-    private float maxX = 0.0f;
-    private float minY = -4f;
-    private float maxY = 4f;
+    private float minX = -6.2f;
+    private float maxX = 6.2f;
+    private float minY = -9.8f;
+    private float maxY = 0.0f;
 
 
     void FixedUpdate()

@@ -43,7 +43,7 @@ public class BallControl : MonoBehaviour
     }
 
     // Limite de velocidade da bola
-public float maxBallSpeed = 15f;
+public float maxBallSpeed = 10f;
 
     void FixedUpdate()
     {

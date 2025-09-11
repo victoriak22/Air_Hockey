@@ -5,9 +5,9 @@ using UnityEngine;
 public class AIControlScript : MonoBehaviour
 {
     private Rigidbody2D rb2d;
-    public float fixedX = 8.0f;   // Posição fixa no eixo X
-    private float minY = -4f;
-    private float maxY = 4f;
+    public float fixedY = 8.0f;   // Posição fixa no eixo Y
+    private float minX = -4f;
+    private float maxX = 4f;
 
     public float speed = 4f;      // Velocidade do movimento da IA
 
@@ -33,19 +33,19 @@ public class AIControlScript : MonoBehaviour
     {
         if (ballTransform == null) return;
 
-        // Posição atual do oponente
         Vector2 currentPos = rb2d.position;
 
-        // Alvo Y é a posição Y da bola
-        float targetY = ballTransform.position.y;
+        // Alvo X é a posição X da bola
+        float targetX = ballTransform.position.x;
 
-        // Move gradualmente para o alvo, respeitando velocidade e limites
-        float newY = Mathf.MoveTowards(currentPos.y, targetY, speed * Time.fixedDeltaTime);
+        // Move gradualmente para o alvo no eixo X, respeitando velocidade e limites
+        float newX = Mathf.MoveTowards(currentPos.x, targetX, speed * Time.fixedDeltaTime);
 
-        // Limita dentro do campo vertical
-        newY = Mathf.Clamp(newY, minY, maxY);
+        // Limita dentro do campo horizontal
+        newX = Mathf.Clamp(newX, minX, maxX);
 
-        Vector2 targetPos = new Vector2(fixedX, newY);
+        // Mantém Y fixo
+        Vector2 targetPos = new Vector2(newX, fixedY);
 
         rb2d.MovePosition(targetPos);
     }
